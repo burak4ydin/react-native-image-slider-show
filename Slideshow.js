@@ -201,9 +201,16 @@ export default class Slideshow extends Component {
             );
             const imageComponent = (
               <View key={index}>
-                <Image
-                  source={imageObject}
-                  style={{height, width}} resizeMode="cover" />
+               <Image
+                    source={imageObject}
+                    style={{
+                      width: '100%',
+                      height: height * 1.2,  // Yüksekliği biraz artırarak fotoğrafın üst kısmının kesilmesini engelliyoruz
+                      resizeMode: 'cover',   // Dolgu şeklinde tam ekran görüntü
+                      position: 'absolute',
+                      top: 0,                // Ekranın en üstünden başlatıyoruz
+                    }}
+                />
                 {textComponent}
               </View>
             );
